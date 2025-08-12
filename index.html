@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quốc Chiến – Bio</title>
+    <meta name="description" content="Website Bán Hack Và Mua Key Game Tự Động">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --bg1: #e9eef7;
+            --bg2: #cfe0ff;
+            --card: #ffffff;
+            --text: #2f3545;
+            --muted: #7a889c;
+            --shadow: 0 10px 30px rgba(0, 0, 0, .15);
+            --pill-shadow: 0 6px 18px rgba(27, 43, 77, .18);
+            --blue: #2f83ff;
+            --blue-dark: #194a88;
+        }
+        
+        * {
+            box-sizing: border-box
+        }
+        
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Poppins, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            color: var(--text);
+            background: linear-gradient(180deg, var(--bg1), var(--bg2))
+        }
+        
+        .container {
+            width: min(980px, 92%);
+            margin-inline: auto
+        }
+        
+        .hero {
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: 44px 0 6px
+        }
+        
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: var(--shadow)
+        }
+        
+        .intro-top {
+            opacity: .8;
+            margin: .6rem 0 0
+        }
+        
+        .name {
+            margin: .2rem 0 0;
+            font-size: clamp(28px, 6vw, 40px);
+            line-height: 1.1
+        }
+        
+        .role {
+            opacity: .9;
+            margin: .3rem 0 1.1rem
+        }
+        
+        .role-typing {
+            font-weight: 600;
+            background: linear-gradient(90deg, #7c4dff, #4da3ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            border-right: 2px solid #7c4dff;
+            padding-right: 4px;
+        }
+        
+        .apps {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            margin: 8px 0 22px
+        }
+        
+        .app {
+            width: 58px;
+            height: 58px;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: grid;
+            place-items: center;
+            position: relative;
+            transition: transform .18s
+        }
+        
+        .app:hover {
+            transform: translateY(-2px)
+        }
+        
+        .app img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+        
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            background: #fff;
+            opacity: .28;
+            transform: translate(-50%, -50%);
+            animation: r 600ms ease
+        }
+        
+        @keyframes r {
+            from {
+                width: 0;
+                height: 0;
+                opacity: .28
+            }
+            to {
+                width: 360px;
+                height: 360px;
+                opacity: 0
+            }
+        }
+        
+        .card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 18px;
+            box-shadow: var(--shadow);
+            margin: 16px 0;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: 600ms cubic-bezier(.2, .7, .2, 1)
+        }
+        
+        .card.reveal {
+            opacity: 1;
+            transform: translateY(0)
+        }
+        
+        .section-title {
+            font-weight: 800;
+            text-align: center;
+            font-size: 26px;
+            margin: 10px 0 6px
+        }
+        
+        .section-wrap {
+            padding: 8px 0
+        }
+        
+        .list {
+            display: grid;
+            gap: 16px
+        }
+        
+        .list-card {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: #fff;
+            border-radius: 26px;
+            padding: 14px 14px;
+            box-shadow: var(--pill-shadow);
+        }
+        
+        .logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            overflow: hidden;
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            background: #f2f4fb
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+        
+        .item-main {
+            flex: 1;
+            min-width: 0
+        }
+        
+        .item-title {
+            font-weight: 800
+        }
+        
+        .item-time {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 4px
+        }
+        
+        .action {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            flex: 0 0 auto;
+            background: var(--blue);
+            box-shadow: inset 0 0 0 2px var(--blue-dark), 0 6px 14px rgba(47, 131, 255, .35);
+            display: grid;
+            place-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .action img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            filter: drop-shadow(0 1px 0 rgba(0, 0, 0, .15))
+        }
+        
+        .warning {
+            border: 1px solid #e7c46b;
+            background: #fffaf0
+        }
+        
+        .warning h2 {
+            margin: .2rem 0 0
+        }
+        
+        .warning h4 {
+            margin: .1rem 0 .6rem;
+            color: #b08900
+        }
+        
+        .warn-list {
+            margin: .4rem 0 1rem;
+            padding-left: 1rem;
+            display: grid;
+            gap: .35rem
+        }
+        /* -------- Thông báo click link đẹp -------- */
+        
+        .card.warning {
+            background: #fff8e7;
+            border: 1px solid #e7c46b;
+            border-radius: 18px;
+            box-shadow: 0 10px 24px rgba(231, 196, 107, .25)
+        }
+        
+        .warn-title {
+            margin: .2rem 0 0;
+            font-weight: 800;
+            letter-spacing: .5px
+        }
+        
+        .warn-sub {
+            margin: .15rem 0 .6rem;
+            color: #b08900;
+            font-weight: 700
+        }
+        
+        .warn-list {
+            margin: .4rem 0 1rem;
+            display: grid;
+            gap: .55rem;
+            padding-left: 0;
+            list-style: none
+        }
+        
+        .warn-list li {
+            line-height: 1.5
+        }
+        
+        .warn-link {
+            display: inline-block;
+            margin-left: .35rem;
+            color: #1557ff;
+            text-decoration: none;
+            word-break: break-word;
+            overflow-wrap: anywhere
+        }
+        
+        .warn-link:hover {
+            text-decoration: underline
+        }
+        /* -------- Skills (có animation) -------- */
+        
+        .skills {
+            display: grid;
+            gap: 14px;
+            margin-top: 10px
+        }
+        
+        .skill {
+            display: block
+        }
+        
+        .skill-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+            font-weight: 600
+        }
+        
+        .skill-num {
+            color: var(--muted);
+            font-weight: 700
+        }
+        
+        .bar {
+            height: 12px;
+            border-radius: 999px;
+            background: #e9edf5;
+            overflow: hidden
+        }
+        
+        .bar i {
+            display: block;
+            height: 100%;
+            width: 0%;
+            /* start 0% để chạy dần */
+            border-radius: 999px;
+            will-change: width;
+            transition: width 1100ms cubic-bezier(.2, .7, .2, 1);
+            background: linear-gradient(90deg, #ff6a3d, #ff9b3d);
+        }
+        
+        .bar i[data-gradient="blue"] {
+            background: linear-gradient(90deg, #3d6aff, #3dbaff)
+        }
+        
+        .bar i[data-gradient="purple"] {
+            background: linear-gradient(90deg, #7c4dff, #c84dff)
+        }
+        
+        .bar i[data-gradient="amber"] {
+            background: linear-gradient(90deg, #ff9800, #ffc107)
+        }
+        
+        .footer {
+            opacity: .7;
+            text-align: center;
+            padding: 30px 0 60px
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero container">
+        <!-- thay bằng link ảnh thật -->
+        <img class="avatar" src="https://drive.google.com/thumbnail?id=1inZPaim-Uif3GbUvo2AcwnDcQzd_-wuQ&sz=w512" alt="Avatar">
+        <p class="intro-top">Hi, i am</p>
+        <h1 class="name">Quốc Chiến</h1>
+        <p class="role">and I'm a <span class="role-typing" id="roleTyping"></span></p>
+
+        <!-- icon app = ảnh vuông -->
+        <nav class="apps">
+            <a class="app" href="https://www.facebook.com/QuocChien2709" target="_blank"><img src="https://drive.google.com/thumbnail?id=1GyFIn_AHnnwged5TUYWByn82fwH71zaD&sz=w512" alt="Facebook"></a>
+            <a class="app" href="http://www.youtube.com/@quocchienn" target="_blank"><img src="https://drive.google.com/thumbnail?id=1hl9GedTS4kOdjZ9_s5ERwm9kjynBdbCB&sz=w2000" alt="YouTube"></a>
+            <a class="app" href="https://youtube.com" target="_blank"><img src="https://drive.google.com/thumbnail?id=10k_hsqbhsK8vA057Y9YW2YEjJ6Qe58RZ&sz=w512" alt="YouTube 2"></a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- THÔNG BÁO -->
+        <section class="card warning" id="warningCard" aria-live="polite">
+            <h2 class="warn-title">THÔNG BÁO</h2>
+            <h4 class="warn-sub">Tất Cả Thành Viên Đều Phải Đọc</h4>
+
+            <ul class="warn-list">
+                <li>☞ Admin Có Bán CanVa CapCut Pro Và một Số App Khác</li>
+
+                <li>
+                    ☞ Cộng Đồng Shadowrocket
+                    <a class="warn-link" href="https://t.me/shadowrocketunlockproappss" target="_blank" rel="noopener">
+                        https://t.me/shadowrocketunlockproappss
+                    </a>
+                </li>
+
+                <li>
+                    ☞ Nhóm Chat Shadowrocket
+                    <a class="warn-link" href="https://t.me/shadowrocketunlockproappss" target="_blank" rel="noopener">
+                        https://t.me/shadowrocketunlockproappss
+                    </a>
+                </li>
+
+                <li>
+                    ☞ Link website Shadowrocket crack
+                    <a class="warn-link" href="https://shadowrocketcrackappios.blogspot.com" target="_blank" rel="noopener">
+                        https://shadowrocketcrackappios.blogspot.com
+                    </a>
+                </li>
+
+                <li>
+                    ☞ Link Tải App Shadowrocket crack
+                    <a class="warn-link" href="https://appstorepreview.wuaze.com" target="_blank" rel="noopener">
+                        https://appstorepreview.wuaze.com
+                    </a>
+                </li>
+            </ul>
+
+            <button class="action" id="btnGotIt" title="Đã hiểu">
+                <img src="https://drive.google.com/thumbnail?id=1YkxtXOoZkhzgkwG2fEUorjlDWUlfCdda&sz=w512" alt="OK">
+            </button>
+        </section>
+
+        <!-- Tải Game -->
+        <section class="section-wrap">
+            <h2 class="section-title">Tải Game</h2>
+            <div class="list">
+                <div class="list-card" aria-label="Menu Hack Map LQ V1">
+                    <span class="logo"><img src="thumb-lq.png" alt="LQ"></span>
+                    <div class="item-main">
+                        <div class="item-title">Menu Hack Map LQ V1</div>
+                        <div class="item-time" id="time1">—</div>
+                    </div>
+                    <!-- Chỉ icon download là link -->
+                    <a class="action" href="LINK_TAI_GAME" target="_blank" title="Tải ngay">
+                        <img src="https://drive.google.com/thumbnail?id=1mBLNjmgZhiTMUxoHWpIxp9RnA-h9gkWC&sz=w512" alt="Tải">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Auto Get Key -->
+        <section class="section-wrap">
+            <h2 class="section-title">Auto Get Key <span style="font-size:18px">🔄</span></h2>
+            <div class="list">
+                <div class="list-card" aria-label="Get Key Hack LQ V1">
+                    <span class="logo"><img src="thumb-key.png" alt="KEY"></span>
+                    <div class="item-main">
+                        <div class="item-title">Get Key Hack LQ V1</div>
+                        <div class="item-time" id="time2">—</div>
+                    </div>
+                    <a class="action" href="LINK_GET_KEY" target="_blank" title="Mở">
+                        <img src="https://drive.google.com/thumbnail?id=1mBLNjmgZhiTMUxoHWpIxp9RnA-h9gkWC&sz=w512" alt="Mở">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tải File Mod -->
+        <section class="section-wrap">
+            <h2 class="section-title">Tải File Mod</h2>
+            <div class="list">
+                <div class="list-card" aria-label="File Full 40 Skin LQ V5">
+                    <span class="logo"><img src="thumb-mod.png" alt="MOD"></span>
+                    <div class="item-main">
+                        <div class="item-title">File Full 40 Skin LQ V5</div>
+                        <div class="item-time">Cập Nhật Ngày 5/8</div>
+                    </div>
+                    <a class="action" href="LINK_TAI_FILE_MOD" target="_blank" title="Tải">
+                        <img src="https://drive.google.com/thumbnail?id=1mBLNjmgZhiTMUxoHWpIxp9RnA-h9gkWC&sz=w512" alt="Tải">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kỹ năng (đÃ CHÈN ANIMATION) -->
+        <section class="card" id="skills">
+            <h3 style="text-align:center">Kỹ Năng Lập Trình</h3>
+            <div class="skills">
+                <div class="skill">
+                    <div class="skill-head"><span>HTML/CSS</span><span class="skill-num">80%</span></div>
+                    <div class="bar"><i data-pct="80"></i></div>
+                </div>
+                <div class="skill">
+                    <div class="skill-head"><span>Javascript</span><span class="skill-num">55%</span></div>
+                    <div class="bar"><i data-pct="5555" data-gradient="blue"></i></div>
+                </div>
+                <div class="skill">
+                    <div class="skill-head"><span>PHP</span><span class="skill-num">35%</span></div>
+                    <div class="bar"><i data-pct="35" data-gradient="purple"></i></div>
+                </div>
+                <div class="skill">
+                    <div class="skill-head"><span>MySQL</span><span class="skill-num">28%</span></div>
+                    <div class="bar"><i data-pct="28" data-gradient="amber"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" style="text-align:center">
+            <h3>Lượt Truy Cập</h3>
+            <p id="visitCounter" style="font-weight:800;font-size:22px">Đang tải…</p>
+        </section>
+    </main>
+
+    <footer class="container footer">
+        <p>© Copyright Quốc Chiến <span id="year"></span></p>
+    </footer>
+
+    <script>
+        // Typing
+        const roles = ["Developer", "Modder", "Content Creator"];
+        let i = 0,
+            ch = 0,
+            del = false;
+        (function loop() {
+            const w = roles[i % roles.length],
+                el = document.getElementById("roleTyping");
+            el.textContent = del ? w.slice(0, --ch) : w.slice(0, ++ch);
+            if (!del && ch === w.length) setTimeout(() => del = true, 900);
+            if (del && ch === 0) {
+                del = false;
+                i++;
+            }
+            setTimeout(loop, del ? 40 : 70);
+        })();
+
+        // Ripple
+        function rip(e) {
+            const a = e.currentTarget,
+                s = document.createElement("span");
+            s.className = "ripple";
+            s.style.left = e.offsetX + "px";
+            s.style.top = e.offsetY + "px";
+            a.appendChild(s);
+            setTimeout(() => s.remove(), 600);
+        }
+        document.querySelectorAll(".app,.action").forEach(x => x.addEventListener("click", rip));
+
+        // Thông báo: ẩn khi bấm, KHÔNG lưu localStorage
+        document.getElementById("btnGotIt").onclick = () => {
+            document.getElementById("warningCard").style.display = "none";
+        };
+
+        // Time stamp
+        function setStamp(el) {
+            const d = new Date();
+            const hh = String(d.getHours()).padStart(2, "0");
+            const mm = String(d.getMinutes()).padStart(2, "0");
+            const ss = String(d.getSeconds()).padStart(2, "0");
+            const dd = String(d.getDate()).padStart(2, "0");
+            const mo = String(d.getMonth() + 1).padStart(2, "0");
+            const yy = d.getFullYear();
+            el.textContent = `${hh}:${mm}:${ss} ${dd}/${mo}/${yy}`;
+        }
+        setStamp(document.getElementById("time1"));
+        setStamp(document.getElementById("time2"));
+
+        // Lượt truy cập (sửa URL API của bạn)
+        (async() => {
+            try {
+                const r = await fetch("sử dụng api của bạn");
+                const d = await r.json();
+                document.getElementById("visitCounter").textContent = new Intl.NumberFormat().format(d.value) + "+";
+            } catch {
+                document.getElementById("visitCounter").textContent = "Không tải được";
+            }
+        })();
+
+        // Year + Reveal
+        document.getElementById("year").textContent = new Date().getFullYear();
+        const io = new IntersectionObserver(es => es.forEach(en => {
+            if (en.isIntersecting) {
+                en.target.classList.add("reveal");
+                io.unobserve(en.target);
+            }
+        }), {
+            threshold: .12
+        });
+        document.querySelectorAll(".card,.list-card").forEach(c => io.observe(c));
+
+        // ===== Progress bars animate on view =====
+        (function() {
+            const bars = document.querySelectorAll('#skills .bar i');
+            // reset width = 0% lúc đầu
+            bars.forEach(b => {
+                b.style.width = '0%';
+            });
+
+            const repeat = true; // true: kéo tới sẽ chạy lại; false: chỉ 1 lần
+            const io2 = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        bars.forEach((b, idx) => {
+                            const pct = parseInt(b.getAttribute('data-pct') || '0', 10);
+                            b.style.transitionDelay = (idx * 120) + 'ms';
+                            requestAnimationFrame(() => {
+                                b.style.width = pct + '%';
+                            });
+                        });
+                        if (!repeat) io2.unobserve(entry.target);
+                    } else if (repeat) {
+                        bars.forEach(b => {
+                            b.style.transitionDelay = '0ms';
+                            b.style.width = '0%';
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.35
+            });
+
+            const skillsSection = document.getElementById('skills');
+            if (skillsSection) io2.observe(skillsSection);
+        })();
+    </script>
+</body>
+
+</html>
